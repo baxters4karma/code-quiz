@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coding Quiz Challenge</title>
+        <link rel="stylesheet" href="./assets/css/styles.css">
+         <!-- FontAweome CDN Link for Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+
+    <body>                
+        <div class="quizBox">       
+            <header>
+                <div class="runningHeader">
+                    <div class="title">View High Scores</div>
+                    <div class="timer">
+                        <div class="timeLeftTxt">Time:  </div>
+                        <div class="timerSec">30</div>
+                    </div>
+                    <div class="timeLine"></div>
+                </div>        
+            </header>
+
+            <section id="quizBody" class="quizBody">
+                <div class="quizTitle">
+                    <h1>Coding Quiz Challenge</h1>
+                </div>
+                <div class="quizInstructions">
+                    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
+                </div>
+                <!-- Start Quiz button -->
+                <div class="startBtn">
+                    <button>Start Quiz</button>
+                </div>
+
+                <!-- Info Box -->
+                <div class="infoBox">
+                    <div class="buttons">                    
+                        <button id="exitBtn" class="quit" style="display: none";>Exit Quiz</button>
+                        <button id="continueBtn" class="restart" style="display: none;">Continue Quiz</button>
+                    </div>
+                </div>
+                    <div class="questTxt">
+                    <!-- insert question from questions.js file -->
+                </div>
+                <div class="optionList">
+                    <!-- insert answer options from JavaScript file -->
+                </div>
+            </section>
+
+            <!-- footer of Quiz box -->
+            <footer>
+                <div class="total_que">
+                    <!-- question count number from JavaScript file -->
+                </div>
+                <button class="nextBtn">Next Question</button>                
+            </footer>
+
+            <!-- Result box -->
+            <div class="resultBox" style="display: none;">
+                <div class="icon">
+                    <i class="fas fa-crown"></i>
+                </div>  
+                <div class="completeText">
+                    <h2>All done!</h2>
+                    <div class="score">
+                        <div class="finalScoreTxt">Your final score is </div>
+                        <div class="finalScore">30</div>
+                    </div>
+                    <div class="initialsSubmit">
+                        <div class="initialsSubmitTxt">Enter initials:  </div>
+                        <div class="playerInitials">
+                            <input type="text" name="playerInitials" id="playerInitials" />
+                            <button class="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- questions and available choice are in this JavaScript file -->
+            <script src="./assets/js/questions.js"></script>
+
+            <!-- quiz answers are in this JavaScript file -->
+            <script src="./assets/js/script.js"></script>
+
+        </div>        
+    </body>
+</html>
