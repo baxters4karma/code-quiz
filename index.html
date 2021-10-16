@@ -4,86 +4,91 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Coding Quiz Challenge</title>
-        <link rel="stylesheet" href="./assets/css/styles.css">
-         <!-- FontAweome CDN Link for Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    </head>
+        <title>Code Challenge Quiz</title>
+        <link rel="stylesheet" href="styles.css">
+    </head> 
+    
+    <div class="wrapper">
+        <header class="hdr">
+            <div class="hdrSubTitle">
+                <a href="#highScoresBox">View High Scores</a>
+            </div>
+            <div id="hdrTimer" class="hdrTimer">
+                <div class="hdrTimerText">
+                    Time:
+                </div>
+                <div id="hdrTimerSec" class="hdrTimerSec">
+                    60  <!-- will populate by JavaScript -->
+                </div>
+            </div>
+        </header>
 
-    <body>                
-        <div class="quizBox">       
-            <header>
-                <div class="runningHeader">
-                    <div class="title">View High Scores</div>
-                    <div class="timer">
-                        <div class="timeLeftTxt">Time:  </div>
-                        <div class="timerSec">30</div>
-                    </div>
-                    <div class="timeLine"></div>
-                </div>        
-            </header>
-
-            <section id="quizBody" class="quizBody">
-                <div class="quizTitle">
+        <body>
+            <section id="quizIntro" class="quizIntro">
+                <div class="quizIntroTitle">
                     <h1>Coding Quiz Challenge</h1>
                 </div>
-                <div class="quizInstructions">
-                    <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
+                <div class="quizIntroText">
+                    <p>Try to answer the following code-related questions within the 60 second time limit. There are 10 questions and each question is worth 10 points. Keep in mind that incorrect answers will penalize your score/timer by ten seconds and correct answers will increase your score/timer by ten seconds. The game is over when all 10 questions are answered or the timer reaches 0. When game ends, your initials and score will be added to our leader board.</p>
                 </div>
-                <!-- Start Quiz button -->
-                <div class="startBtn">
-                    <button>Start Quiz</button>
-                </div>
-
-                <!-- Info Box -->
-                <div class="infoBox">
-                    <div class="buttons">                    
-                        <button id="exitBtn" class="quit" style="display: none";>Exit Quiz</button>
-                        <button id="continueBtn" class="restart" style="display: none;">Continue Quiz</button>
-                    </div>
-                </div>
-                    <div class="questTxt">
-                    <!-- insert question from questions.js file -->
-                </div>
-                <div class="optionList">
-                    <!-- insert answer options from JavaScript file -->
+                <div class="quizIntroStart">
+                    <button id="start">Start Quiz</button>
                 </div>
             </section>
 
-            <!-- footer of Quiz box -->
-            <footer>
-                <div class="total_que">
-                    <!-- question count number from JavaScript file -->
-                </div>
-                <button class="nextBtn">Next Question</button>                
-            </footer>
-
-            <!-- Result box -->
-            <div class="resultBox" style="display: none;">
-                <div class="icon">
-                    <i class="fas fa-crown"></i>
-                </div>  
-                <div class="completeText">
-                    <h2>All done!</h2>
-                    <div class="score">
-                        <div class="finalScoreTxt">Your final score is </div>
-                        <div class="finalScore">30</div>
+            <section id="quizBox">
+                    <!-- filled by JavaScript -->
+                    <div class="buttons">
+                        <button class="btn" id="btn0">
+                            A.  <span id="choice0"></span>
+                        </button>
+                         <button class="btn" id="btn1">
+                            B.  <span id="choice1"></span>
+                        </button>
+                         <button class="btn" id="btn2">
+                            C.  <span id="choice3"></span>
+                        </button>
+                         <button class="btn" id="btn3">
+                            D.  <span id="choice3"></span>
+                        </button>
                     </div>
-                    <div class="initialsSubmit">
-                        <div class="initialsSubmitTxt">Enter initials:  </div>
-                        <div class="playerInitials">
-                            <input type="text" name="playerInitials" id="playerInitials" />
-                            <button class="submit">Submit</button>
-                        </div>
-                    </div>
+                    <hr>
+                    <footer>KU Bootcamp, Week 4: Quiz App</footer>
+            </section>
+
+            <section id="resultBox" class="resultBox" style="display:none">
+                <div id="resultBoxTitle">
+                    <h1>All done!</h1>                    
                 </div>
-            </div>
-            <!-- questions and available choice are in this JavaScript file -->
-            <script src="./assets/js/questions.js"></script>
+                <div id="resultBoxScore">
+                    <p>"Your final score is " + userScore + "."</p>
+                    <!-- add to local storage -->
+                </div>
+                <div id="resultBoxInitials">
+                    <p>Enter initials: <input type="text" name="userInitials" id="userInitials" /></p>
+                    
+                </div>
+                <div class="resultBoxButton" id="submit">
+                    <input type="button" value="Submit" />
+                </div>
+            </section>
 
-            <!-- quiz answers are in this JavaScript file -->
-            <script src="./assets/js/script.js"></script>
+            <section id="highScoresBox" class="highScoresBox" style="display:none">
+                <div id="highScoresBoxTitle">
+                    <h1>High Scores</h1>
+                </div>
+                <div id="highScores">
+                    <!-- get from local storage -->
+                </div>
+                <div class="restart" id="restart">
+                    <input type="button" value="Go back" />
+                    <span id="reset" class="reset"><input type="button" value="Clear High Scores" /></span>
+                </div>
+            </section>
+            
+            <script src="./js/script.js"></script>
+            <script src="./js/questions.js"></script>
 
-        </div>        
-    </body>
+        </body>
+    </div>
 </html>
