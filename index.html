@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="./assets/css/styles.css">
     </head> 
     
-    <div class="wrapper">
-        <header class="hdr">
+    <div class="container">
+        <!-- <header class="hdr">
             <div id="hdrSubTitle" class="hdrSubTitle">
                 <a href="#highScoresBox">View High Scores</a>
             </div>                               
@@ -19,15 +19,15 @@
                 </div>
                 <div id="hdrTimerSec" class="hdrTimerSec">
                     60  <!-- will populate by JavaScript -->
-                </div>
+                <!-- /div>
             </div>
             <div id="hdrProgress">
                     <p>Question x of y</p>
             </div>         
-        </header>
+        </header> -->
 
         <body>
-            <section id="quizIntro" class="quizIntro">
+            <!-- <section id="quizIntro" class="quizIntro">
                 <div class="quizIntroTitle">
                     <h1>Coding Quiz Challenge</h1>
                 </div>
@@ -37,10 +37,18 @@
                 <div class="quizIntroStart">
                     <button id="start">Start Quiz</button>
                 </div>
-            </section>
+            </section> -->
 
-            <section id="quizBox">
+            <section id="quizBox" class="quizBox">
+                <div id="quiz">
+                    <h1>Coding Quiz Challenge</h1>
+                    <div class="quizHeader">
+                        <p id="progress">Question x of y</p>
+                        <p id="countdown">10</p>
+                    </div>
+                    <p id="question">What is your name?</p>
                     <!-- filled by JavaScript -->
+
                     <div id="buttons" class="buttons">
                         <button class="btn" id="btn0">
                             A.  <span id="choice0"></span>
@@ -49,25 +57,28 @@
                             B.  <span id="choice1"></span>
                         </button>
                          <button class="btn" id="btn2">
-                            C.  <span id="choice3"></span>
+                            C.  <span id="choice2"></span>
                         </button>
                          <button class="btn" id="btn3">
                             D.  <span id="choice3"></span>
                         </button>
                     </div>
                     <hr>
-                    <footer>KU Bootcamp, Week 4: Quiz App</footer>
+                    <footer>
+                        KU Bootcamp, Week 4: Quiz App
+                    </footer>
+                </div>
             </section>
 
-            <section id="resultBox" class="resultBox" style="display:none">
+            <!-- <section id="resultBox" class="resultBox" style="display:none">
                 <div id="resultBoxTitle">
                     <h1>All done!</h1>                    
                 </div>
                 <div id="resultBoxScore">
                     <p>"Your final score is " + userScore + "."</p>
-                    <!-- add to local storage -->
-                </div>
-                <div id="resultBoxInitials">
+                    <!-- add to local storage
+                </div> -->
+                <!-- <div id="resultBoxInitials">
                     <p>Enter initials: <input type="text" name="userInitials" id="userInitials" /></p>
                     
                 </div>
@@ -80,17 +91,17 @@
                 <div id="highScoresBoxTitle">
                     <h1>High Scores</h1>
                 </div>
-                <div id="highScores">
+                <div id="highScores" -->
                     <!-- get from local storage -->
-                </div>
+                <!-- /div>
                 <div class="restart" id="restart">
                     <input type="button" value="Go back" />
                     <span id="reset" class="reset"><input type="button" value="Clear High Scores" /></span>
                 </div>
-            </section>
+            </section> -->
             
             <script src="./assets/js/script.js"></script>
-            <script src="./assets/js/questions.js"></script>
+            <!-- <script src="./assets/js/questions.js"></script> -->
 
         </body>
     </div>
