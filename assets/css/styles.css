@@ -27,6 +27,7 @@ header {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  margin: 0 auto;  
 }
 
 .hdr {
@@ -35,41 +36,39 @@ header {
     justify-content: space-between;
 }
 
-.hdrTimer {
-  display: flex;
-  flex-flow: wrap;  
-  justify-content: left;
-  width: 90px;
+.hdr #hdrSubTitle {
+    font-size: medium;
 }
 
-.hdrTimerSec {
+.hdr #hdrTimer {
+    display: flex;
+    flex-flow: wrap;    
+    font-size: medium;
+}
+
+.hdr #hdrTimer .hdrTimeText {  
+  width: 20px;
+}
+
+.hdr #hdrTimerSec {
   margin-left: .25em;
+}
+
+.hdr #hdrProgress {
+  width: 100%;
+  color: darkgray;
+  font-size: 1rem;
+  font-weight: 70;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-start;
+  justify-content: left;
 }
 
 .quizIntro {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-}
-
-.quizBox {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: left;
-}
-
-.timer {
-  width: 90px;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-evenly;
-}
-
-.question {
-	font-weight: 600;
-}
-.answers {
-    margin-bottom: 20px;
 }
 
 #start {
@@ -86,6 +85,64 @@ header {
 
 #start:hover{
 	background-color: #3a8;
+}
+
+.quizBox {
+  width: 600px;  
+  display: flex;
+  flex-flow: wrap;
+  justify-content: left;
+}
+
+.quizBox #quizBoxCard {
+
+}
+
+.quizBox #quizBoxGroup {
+
+}
+
+.quizBox #quizBoxQuestion {
+	font-size: 1.8rem;
+  font-weight: 600;  
+  border: 1px solid #a777;
+  border-width: 1px 0;
+  padding: 5px;
+}
+
+.quizBox #quizBoxOptions {
+
+}
+
+.quizBox #quizBoxAnswers {
+    margin-bottom: 20px;
+}
+
+.buttons {
+  margin: 1.5rem 0 4rem 0;
+}
+
+.btn {
+  text-align: left;
+  background-color: #addd;
+  width: 100%;
+  font-size: 1.8rem;
+  color: black;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  margin: 7px 0;
+  padding: 1rem;
+  outline: none;  
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.btn:active {
+  background-color: purple;  
 }
 
 #submit{
