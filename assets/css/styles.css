@@ -26,7 +26,7 @@ header {
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 20px;  
   margin: 0 auto;  
 }
 
@@ -88,14 +88,15 @@ header {
 }
 
 .quizBox {
-  width: 600px;  
+  width: 100px;  
   display: flex;
   flex-flow: wrap;
   justify-content: left;
 }
 
 .quizBox #quizBoxCard {
-
+  background-color: white;
+  width: 100px;
 }
 
 .quizBox #quizBoxGroup {
@@ -144,6 +145,35 @@ header {
 .btn:active {
   background-color: purple;  
 }
+
+#score {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.quizRepeat {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.quizRepeat a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: orangered;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: all .3s;
+}
+
+.quizRepeat:hover {
+  background-color: darkgray;
+}
+
+
 
 #submit{
 	font-family: sans-serif;
