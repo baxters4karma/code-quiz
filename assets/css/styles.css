@@ -100,19 +100,18 @@ header {
 }
 
 .quizBox #quizBoxGroup {
-
+  font-size: 1.8rem;
+  font-weight: 600; 
 }
 
 .quizBox #quizBoxQuestion {
-	font-size: 1.8rem;
-  font-weight: 600;  
-  border: 1px solid #a777;
+	border: 1px solid #a777;
   border-width: 1px 0;
   padding: 5px;
 }
 
 .quizBox #quizBoxOptions {
-
+  padding: 5px;
 }
 
 .quizBox #quizBoxAnswers {
