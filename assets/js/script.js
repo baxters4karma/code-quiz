@@ -1,7 +1,7 @@
 //CREATE QUIZ CLASS
 class Quiz {
     constructor(questions) {
-        this.score = 0;
+        this.score = 100;
         this.questions = questions;
         this.questionIndex = 0;
     }
@@ -12,9 +12,10 @@ class Quiz {
 
     guess(answer) {
         if (this.getQuestionIndex().isCorrectAnswer(answer)) {
-            this.score++;            
+            this.score+=10;            
         }
         this.questionIndex++;
+        this.score-=10;
     }
 
     isEnded() {
@@ -76,10 +77,11 @@ function showProgress() {
 
 // show score
 function showScores() {
+    let totalScore = quiz.questions.length * 10;
     let quizEndHTML =
     `
             <h1>All Done!</h1>
-            <h2 id="score">Your final score is ${quiz.score} of ${quiz.questions.length}</h2>
+            <h2 id="score">Your final score is ${quiz.score} of ${totalScore}</h2>
             <div class="quizRepeat">
                 <a href="index.html">Take Quiz Again</a>
             </div>
@@ -178,7 +180,7 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 //add a count down
-let time = 10;
+let time = 1;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
 
