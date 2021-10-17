@@ -122,7 +122,7 @@ header {
   font-weight: 700;
 }
 
-.quizHeader #countdown {
+.quizHeader #countDown {
   font-size: 1.6rem;
   font-weight: 700;
   background-color: orangered;
@@ -221,7 +221,7 @@ header {
 
 
 
-#submit{
+/* #submit{
 	font-family: sans-serif;
 	font-size: 20px;
 	background-color: #297;
@@ -234,4 +234,4 @@ header {
 }
 #submit:hover{
 	background-color: #3a8;
-}
+} */
