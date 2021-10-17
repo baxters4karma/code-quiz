@@ -9,23 +9,6 @@
     </head> 
     
     <div class="container">
-        <!-- <header class="hdr">
-            <div id="hdrSubTitle" class="hdrSubTitle">
-                <a href="#highScoresBox">View High Scores</a>
-            </div>                               
-            <div id="hdrTimer" class="hdrTimer">
-                <div class="hdrTimerText">
-                    Time:
-                </div>
-                <div id="hdrTimerSec" class="hdrTimerSec">
-                    60  <!-- will populate by JavaScript -->
-                <!-- /div>
-            </div>
-            <div id="hdrProgress">
-                    <p>Question x of y</p>
-            </div>         
-        </header> -->
-
         <body>
             <!-- <section id="quizIntro" class="quizIntro">
                 <div class="quizIntroTitle">
@@ -40,30 +23,41 @@
             </section> -->
 
             <section id="quizBox" class="quizBox">
-                <div id="quiz">
-                    <h1>Coding Quiz Challenge</h1>
-                    <div class="quizHeader">
-                        <p id="progress">Question x of y</p>
-                        <p id="countDown"></p>
-                    </div>
-                    <p id="question">What is your name?</p>
-                    <!-- filled by JavaScript -->
+                <div id="quiz">                    
+                    <header class="quizHeader">
+                        <div id="hdrSubTitle" class="hdrSubTitle">
+                            <a href="#highScoresBox">View High Scores</a>
+                        </div>                               
+                                                  
+                        <div id="countDown" class="hdrTimerSec">
+                            <!-- will populate by JavaScript -->
+                        </div>                                               
+                    </header>
 
-                    <div id="buttons" class="buttons">
-                        <button class="btn" id="btn0">
-                            A.  <span id="choice0"></span>
-                        </button>
-                         <button class="btn" id="btn1">
-                            B.  <span id="choice1"></span>
-                        </button>
-                         <button class="btn" id="btn2">
-                            C.  <span id="choice2"></span>
-                        </button>
-                         <button class="btn" id="btn3">
-                            D.  <span id="choice3"></span>
-                        </button>
+                    <div id="quizContent" class="quizContent">
+                        <h1 id="quizTitle">Coding Quiz Challenge</h1>                        
+                        <p id="progress">Question x of y</p>                        
+                        <p id="question">What is your name?</p>
+                            <!-- filled by JavaScript -->
+
+                        <div id="buttons" class="buttons">
+                            <button class="btn" id="btn0">
+                                A.  <span id="choice0"></span>
+                            </button>
+                            <button class="btn" id="btn1">
+                                B.  <span id="choice1"></span>
+                            </button>
+                            <button class="btn" id="btn2">
+                                C.  <span id="choice2"></span>
+                            </button>
+                            <button class="btn" id="btn3">
+                                D.  <span id="choice3"></span>
+                            </button>
+                        </div>
                     </div>
+
                     <hr>
+
                     <footer>
                         KU Bootcamp, Week 4: Quiz App
                     </footer>

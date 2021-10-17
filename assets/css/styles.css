@@ -3,28 +3,17 @@
 }
 
 html,
-body,
-.container {
-  /* height: 100%; */
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body{
-	font-size: 20px;
+  font-size: 20px;
 	font-family: sans-serif;
 	color: #333;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
-}
-
 .container {
-  max-width: 900px;
+  max-width: 100vh;
   margin: 0 auto;  
   padding: 0 2rem;
   display: flex;
@@ -33,31 +22,61 @@ header {
   height: 100vh;
 }
 
-/* .hdr {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-between;
+header {
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hdr #hdrSubTitle {
-    font-size: medium;
+.quizBox {
+  width: 1000px;  
+  margin: 0 auto;
+  background-color: #eee;
+  padding: 2.5rem 5rem 5rem 5rem;
+  border: 3px solid #333;
+  border-radius: 5px;
 }
 
-.hdr #hdrTimer {
-    display: flex;
-    flex-flow: wrap;    
-    font-size: medium;
+.quizHeader {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.hdr #hdrTimer .hdrTimeText {  
-  width: 20px;
+.quizHeader #hdrSubTitle {
+  text-align: left;  
+  font-size: larger;
+  width: 15rem;
+  justify-content: left;  
 }
 
-.hdr #hdrTimerSec {
-  margin-left: .25em;
+.quizHeader #countDown {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 9.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: darkslateblue;
+  padding: 5px 0px 5px 5px;  
+  margin: 1px;
+  color: white;
+  border-radius: 3px;  
 }
 
-.hdr #hdrProgress {
+.quizContent #quizTitle {  
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+  background-color: aqua;
+  
+}
+
+#progress {
   width: 100%;
   color: darkgray;
   font-size: 1rem;
@@ -72,7 +91,16 @@ header {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-} */
+} 
+
+.quizBox #question {
+  font-size: 2rem;
+  font-weight: 600;
+  color: darkslateblue;
+  border: 1px solid #777;
+  border-width: 1px 0;
+  padding: 5px 0;  
+}
 
 /* #start {
 	font-family: sans-serif;
@@ -90,88 +118,13 @@ header {
 	background-color: #3a8;
 } */
 
-.quizBox {
-  width: 600px;  
-  margin: 0 auto;
-  background-color: #eee;
-  padding: 1rem 5rem 5rem 5rem;
-  border: 3px solid #333;
-  border-radius: 5px;
-}
-
-.quizBox h1 {
-  background-color: purple;
-  font-size: 2rem;
-  text-align: center;
-  color: white;
-  padding: 1rem 0;
-  width: 100%;
-  margin-bottom: 2rem;
-  border-radius: 3px;
-}
-
-.quizHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;  
-}
-
-.quizHeader #progress {
-  color: #333;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.quizHeader #countDown {
-  font-size: 1.6rem;
-  font-weight: 700;
-  background-color: orangered;
-  padding: 5px;
-  margin: 1px;
-  color: white;
-  border-radius: 3px;
-}
-
-.quizBox #question {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: orangered;
-  border: 1px solid #777;
-  border-width: 1px 0;
-  padding: 5px 0;  
-}
-
-/* .quizBox #quizBoxCard {
-  background-color: white;
-  width: 100px;
-}
-
-.quizBox #quizBoxGroup {
-  font-size: 1.8rem;
-  font-weight: 600; 
-}
-
-.quizBox #quizBoxQuestion {
-	border: 1px solid #a777;
-  border-width: 1px 0;
-  padding: 5px;
-}
-
-.quizBox #quizBoxOptions {
-  padding: 5px;
-}
-
-.quizBox #quizBoxAnswers {
-    margin-bottom: 20px;
-} */
-
 .buttons {
   margin: 1.5rem 0 4rem 0;
 }
 
 .btn {
   text-align: left;
-  background-color: #addd;
+  background-color:aqua;
   width: 100%;
   font-size: 1.8rem;
   color: black;
