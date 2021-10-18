@@ -1,7 +1,7 @@
 //CREATE QUIZ CLASS
 class Quiz {
     constructor(questions) {
-        this.score = 100;
+        this.score = 0;
         this.questions = questions;
         this.questionIndex = 0;
     }
@@ -11,12 +11,12 @@ class Quiz {
     }
 
     guess(answer) {
-        if (this.getQuestionIndex().isCorrectAnswer(answer)) {
-            this.score+=10;            
+        if (this.getQuestionIndex().isCorrectAnswer(answer)) {            
+            this.score += 10;
+        } else {
+            this.score -= 10;
         }
-        this.questionIndex++;
-        this.score -= 10;        
-        
+        this.questionIndex++;        
     }
 
     isEnded() {
@@ -191,7 +191,7 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 //add a count down
-let time = 10;
+let time = 1;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
 
