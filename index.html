@@ -10,19 +10,20 @@
     
     <div class="container">
         <body>
-            <!-- <section id="quizIntro" class="quizIntro">
+            <section id="quizIntro" class="quizIntro">
                 <div class="quizIntroTitle">
                     <h1>Coding Quiz Challenge</h1>
                 </div>
                 <div class="quizIntroText">
-                    <p>Try to answer the following code-related questions within the 60 second time limit. There are 10 questions and each question is worth 10 points. Keep in mind that incorrect answers will penalize your score/timer by ten seconds and correct answers will increase your score/timer by ten seconds. The game is over when all 10 questions are answered or the timer reaches 0. When game ends, your initials and score will be added to our leader board.</p>
+                    <p>Try to answer the following code-related questions within 60 seconds. There are 10 questions and each question is worth 10 points.</p>
+                    <p>Keep in mind that incorrect answers will penalize your score/timer by ten seconds and correct answers will increase your score/timer by ten seconds. The game is over when all 10 questions are answered or the timer reaches 0. When game ends, your initials and score will be added to our leader board.</p>
                 </div>
                 <div class="quizIntroStart">
-                    <button id="start">Start Quiz</button>
+                    <button id="start" class="btn" onclick="hideQuizIntro()">Start Quiz</button>
                 </div>
-            </section> -->
+            </section>
 
-            <section id="quizBox" class="quizBox">
+            <section id="quizBox" class="quizBox" style="display: none;">
                 <div id="quiz">                    
                     <header class="quizHeader">
                         <div id="hdrSubTitle" class="hdrSubTitle">
@@ -64,7 +65,7 @@
                 </div>
             </section>
 
-            <!-- <section id="resultBox" class="resultBox" style="display:none">
+            <!-- <section id="resultBox" class="resultBox" style="display: none;">
                 <div id="resultBoxTitle">
                     <h1>All done!</h1>                    
                 </div>
@@ -81,7 +82,7 @@
                 </div>
             </section>
 
-            <section id="highScoresBox" class="highScoresBox" style="display:none">
+            <section id="highScoresBox" class="highScoresBox" style="display: none;">
                 <div id="highScoresBoxTitle">
                     <h1>High Scores</h1>
                 </div>

@@ -15,7 +15,8 @@ class Quiz {
             this.score+=10;            
         }
         this.questionIndex++;
-        this.score-=10;
+        this.score -= 10;        
+        
     }
 
     isEnded() {
@@ -39,6 +40,7 @@ class Question {
 
 // DISPLAY QUESTION
 function displayQuestion() {    
+    
     if (quiz.isEnded()) {
         showScores();
     } else {
@@ -57,6 +59,13 @@ function displayQuestion() {
         showProgress();
     }
 };
+
+function hideQuizIntro() {
+    let qIntroEl = document.getElementById("quizIntro");
+    qIntroEl.style.display = "none";
+    let qBox = document.getElementById("quizBox");
+    qBox.style.display = "flex";
+}
 
 // create guess function
 function guess(id, guess) {
@@ -202,4 +211,3 @@ function startCountdown() {
 }
 
 startCountdown();
-
