@@ -1,118 +1,121 @@
+//CREATE A QUESTION CLASS
+class Question {
+  constructor(text, choices, answer) {
+    this.text = text;
+    this.choices = choices;
+    this.answer = answer;
+  }
+
+  //property
+  isCorrectAnswer(choice) {
+    return this.answer === choice;
+  }
+}
+
 // creating an array and passing the number, questions, options, and answers
 const questions = [
-  {
-    numberId: 0,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
-    options: [
+  new Question(
+    "What does HTML stand for?",
+    [
       "Hyper Text Preprocessor",
       "Hyper Text Markup Language",
       "Hyper Text Multiple Language",
       "Hyper Tool Multi Language",
     ],
-  },
-  {
-    numberId: 1,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
-    options: [
+    "Hyper Text Markup Language"
+  ),
+  new Question(
+    "What does CSS stand for?",
+    [
       "Common Style Sheet",
       "Colorful Style Sheet",
       "Computer Style Sheet",
       "Cascading Style Sheet",
     ],
-  },
-  {
-    numberId: 2,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
-    options: [
+    "Cascading Style Sheet"
+  ),
+  new Question(
+    "What does PHP stand for?",
+    [
       "Hypertext Preprocessor",
       "Hypertext Programming",
       "Hypertext Preprogramming",
       "Hometext Preprocessor",
     ],
-  },
-  {
-    numberId: 3,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
-    options: [
+    "Hypertext Preprocessor"
+  ),
+  new Question(
+    "What does SQL stand for?",
+    [
       "Stylish Question Language",
       "Stylesheet Query Language",
       "Statement Question Language",
       "Structured Query Language",
     ],
-  },
-  {
-    numberId: 4,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
-    options: [
+    "Structured Query Language"
+  ),
+  new Question(
+    "What does XML stand for?",
+    [
       "eXtensible Markup Language",
       "eXecutable Multiple Language",
       "eXTra Multi-Program Language",
       "eXamine Multiple Language",
     ],
-  },
+    "eXtensible Markup Language"
+  ),
 
-  {
-    numberId: 5,
-    question: "What are JavaScript Data Types?",
-    answer: "number, string, boolean, function, object, undefined",
-    options: [
+  new Question(
+    "What are JavaScript Data Types?",
+    [
       "number, string, boolean, function, object, undefined, lists",
       "number, string, boolean, function, tuple, undefined",
       "number, string, boolean, function, object, undefined",
       "number, string, boolean, function, object, float",
     ],
-  },
+    "number, string, boolean, function, object, undefined"
+  ),
 
-  {
-    numberId: 6,
-    question: "Select the strict equality operator.",
-    answer: "===",
-    options: ["equals", "=", "==", "==="],
-  },
+  new Question(
+    "Select the strict equality operator.",
+    ["equals", "=", "==", "==="],
+    "==="
+  ),
 
-  {
-    numberId: 7,
-    question: "What would be the result of 3+2+'7'?",
-    answer: "57",
-    options: ["12", "57", "327", "5+7"],
-  },
+  new Question(
+    "What would be the result of 3+2+'7'?",
+    ["12", "57", "327", "5+7"],
+    "57"
+  ),
 
-  {
-    numberId: 8,
-    question: "Select item below that is NOT a JavaScript error type",
-    answer: "Syntax errors",
-    options: [
-      "Load time errors",
-      "Run time errors",
-      "Syntax errors",
-      "Logical errors",
+  new Question(
+    "Select item below that is NOT a JavaScript error type",
+    ["Load time errors", "Run time errors", "Syntax errors", "Logical errors"],
+    "Syntax errors"
+  ),
+
+  new Question(
+    "What does NaN stand for?",
+    [
+      "Not a number",
+      "Not applicable now",
+      "Non-ASCII Notation",
+      "Not a negative",
     ],
-  },
-
-  {
-    numberId: 9,
-    question: "What does NaN stand for?",
-    answer: "Not a number",
-    options: ["Not a number", "Not applicable now", "Non-ASCII Notation", "Not a negative"],
-  },
+    "Not a number"
+  ),
 
   // you can uncomment the below codes and make duplicate as more as you want to add question
   // but remember you need to give the numberId value serialize like 1,2,3,5,6,7,8,9.....
 
-  //   {
-  //   numberId: 6,
-  //   question: "Your Question is Here",
-  //   answer: "Correct answer of the question is here",
-  //   options: [
+  //   new Question(
+  //   "Your Question is Here",
+  //   [
   //     "Option 1",
   //     "option 2",
   //     "option 3",
   //     "option 4"
-  //   ]
-  // },
+  //   ],
+  //   "Correct answer of the question is here",
+  // ),
 ];
