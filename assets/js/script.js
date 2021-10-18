@@ -82,6 +82,8 @@ function showProgress() {
     let progressEl = document.getElementById("progress");
     progressEl.innerHTML =
         `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
+    let currScoreEl = document.getElementById("currentScore");
+    currScoreEl.innerHTML = `Score: ${quiz.score}`;
 }
 
 // show score
@@ -89,7 +91,7 @@ function showScores() {
     let totalScore = quiz.questions.length * 10;
     let quizEndHTML =
     `
-            <h1>All Done!</h1>
+            <h1 id="score">All Done!</h1>
             <h2 id="score">Your final score is ${quiz.score} of ${totalScore}</h2>
             <div class="quizRepeat">
                 <a href="index.html">Take Quiz Again</a>
@@ -189,7 +191,7 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 //add a count down
-let time = 1;
+let time = 10;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
 
