@@ -75,12 +75,19 @@ function showProgress() {
 // show score
 function showScores() {
     let totalScore = quiz.questions.length * 10;
-    let quizEndHTML =
-    `
+    let quizEndHTML = `
             <h1 id="score">All Done!</h1>
             <h2 id="score">Your final score is ${quiz.score} of ${totalScore}</h2>
-            <div class="quizRepeat">
-                <a href="index.html">Take Quiz Again</a>
+            <div id="initials">
+                Enter initials:  <input type="text" name="userInitials" id="userInitials" />                
+            </div>
+            <div id="resultBox" class="resultBox">
+                <div id="resultBoxButton" class="resultBoxButton">
+                    <input id="submit" type="button" value="Submit" />
+                </div>
+                <div class="quizRepeat">
+                    <a href="index.html">Take Quiz Again</a>
+                </div>
             </div>
         `;
     let quizEl = document.getElementById("quiz");
