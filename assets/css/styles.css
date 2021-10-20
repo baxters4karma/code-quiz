@@ -13,13 +13,12 @@ body {
 }
 
 .container {
-  max-width: 100vh;
+  max-width: 75vh;
   margin: 0 auto;  
-  padding: 0 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: center;  
 }
 
 header {
@@ -37,19 +36,19 @@ header {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  max-width: 50rem;
+  max-width: 23rem;
 }
 
 .quizIntroTitle {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .quizIntroText {
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .quizBox {  
-  max-width: 50vh;
+  max-width: 100%;
   margin: 0 auto;
   background-color: #eee;
   padding: 2.5rem 5rem 5rem 5rem;
@@ -64,8 +63,8 @@ header {
 
 .quizHeader #hdrSubTitle {
   text-align: left;  
-  font-size: larger;
-  width: 15rem;
+  font-size: medium;
+  width: 10rem;
   justify-content: left;  
 }
 
@@ -73,11 +72,11 @@ header {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  width: 9.5rem;
-  font-size: 1.6rem;
-  font-weight: 700;
+  width: 4rem;
+  font-size: 1rem;
+  font-weight: 500;
   background-color: darkslateblue;
-  padding: 5px 0px 5px 5px;  
+  padding: 5px 5px 5px 5px;  
   margin: 1px;
   color: white;
   border-radius: 3px;  
@@ -90,7 +89,7 @@ header {
 
 .quizContent #quizTitle {  
   width: 100%;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: center;
   background-color: aqua;
   
@@ -103,7 +102,7 @@ header {
 }
 
 #progress {
-  width: 15rem;
+  width: 8rem;
   color: darkgray;
   font-size: 1rem;
   font-weight: 70;
@@ -111,18 +110,18 @@ header {
 }
 
 #currentScore {
-  width: 9.5rem;
+  width: 5em;
   color: darkgray;
   font-size: 1rem;
   font-weight: 70;
   display: flex;
   flex-flow: wrap;
-  justify-content:right;
+  justify-content:space-between;
   
 }
 
 .quizBox #question {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: darkslateblue;
   border: 1px solid #777;
@@ -138,7 +137,7 @@ header {
   text-align: left;
   background-color:aqua;
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1rem;
   color: black;
   border: 1px solid darkgray;
   border-radius: 5px;
@@ -160,16 +159,16 @@ header {
 #score {
   color: black;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 4rem;
 }
 
 #userInitials {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: black;
-  margin-bottom: 4rem;
-  font-size: 2vh;
+  margin-bottom: 4rem;  
   padding: 3px;
+  align-items: center;
 }
 
 .resultBox {
@@ -179,15 +178,8 @@ header {
   align-items: center;
 }
 
-.resultBox .resultBoxButton {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 #submit{
-	font-size: 1.6rem;
+	font-size: 1.25rem;
   font-weight: 600;
   color: white;
   text-decoration: none;
@@ -196,10 +188,12 @@ header {
   border-radius: 5px;
   flex-flow: wrap;
   justify-content: space-evenly;
+  margin: .5rem;
+  width: 10rem;
 }
 
 #submit:hover{
-	background-color: darkgray;
+	background-color: blue;
 }
 
 .quizRepeat {
@@ -207,17 +201,28 @@ header {
   flex-flow: wrap;
   justify-content: space-evenly;
   align-items: center;  
+  text-align: center;
+  width: 10rem;
+  cursor: pointer;  
+  background-color: orangered;
+  border-image: initial;
+  z-index: 9;
+  
 }
 
 .quizRepeat a {
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: white;
   text-decoration: none;
   background-color: orangered;
   padding: 1rem;
   border-radius: 5px;
+   width: 10rem;
+  cursor: pointer;
   border-width: 2px;
+  border-style: outset;
+  border-color: black;
   border-style: outset;
   border-color: internal-light-dark(
     rgb(118,118,118),
@@ -225,8 +230,8 @@ header {
   transition: all .3s;
 }
 
-.quizRepeat:hover {
-  background-color: darkgray;
+.quizRepeat a:hover {
+  background-color:blue;
 }
 
 #initials {

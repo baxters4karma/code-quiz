@@ -51,7 +51,7 @@ function hideQuizIntro() {
     qIntroEl.style.display = "none";
     let qBox = document.getElementById("quizBox");
     qBox.style.display = "flex";
-}
+};
 
 // create guess function
 function guess(id, guess) {
@@ -70,20 +70,21 @@ function showProgress() {
         `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
     let currScoreEl = document.getElementById("currentScore");
     currScoreEl.innerHTML = `Score: ${quiz.score}`;
-}
+};
 
 // show score
-function showScores() {
+function showScores() {    
     let totalScore = quiz.questions.length * 10;
     let quizEndHTML = `
             <h1 id="score">All Done!</h1>
-            <h2 id="score">Your final score is ${quiz.score} of ${totalScore}</h2>
+            <h2 id="score">Your final score is: </br> ${quiz.score} of ${totalScore}</h2>
             <div id="initials">
-                Enter initials:  <input type="text" name="userInitials" id="userInitials" />                
+                Enter initials:
+                <input type="text" name="userInitials" id="userInitials" />
             </div>
             <div id="resultBox" class="resultBox">
                 <div id="resultBoxButton" class="resultBoxButton">
-                    <input id="submit" type="button" value="Submit" />
+                    <input id="submit" type="button" value="Submit" onclick=saveUserData(score,initials); />
                 </div>
                 <div class="quizRepeat">
                     <a href="index.html">Take Quiz Again</a>
@@ -91,8 +92,8 @@ function showScores() {
             </div>
         `;
     let quizEl = document.getElementById("quiz");
-    quizEl.innerHTML = quizEndHTML;
-}
+    quizEl.innerHTML = quizEndHTML;        
+};
 
 //acquire questions
 
@@ -121,6 +122,39 @@ function startCountdown() {
             counting.innerHTML = timerHTML;
         }
     }, 1000);
+};
+
+function saveUserData() {
+  let userInfoEl = document.querySelector("#userInitials").value;
+  var userInfoScore = `${quiz.score}`;
+  let nowDate = new Date();
+  const userInfo = [localStorage.getItem("userInfo", JSON.parse(userInfo))];
+  var userInfoNew = [userInfoScore, userInfoEl, nowDate];
+    
+  userInfo.push(userInfoNew);
+  localStorage.setItem("userInfo", JSON.stringify(userInfo));
+}
+
+function loadUserData() {
+    
+    let highScoresBoxEl = document.getElementById("#highScores");    
+    let userInfo = localStorage.getItem("userInfo");
+
+    if (!userInfo) {
+      return false;
+    }
+
+    for (let i = 0; i < userInfo.length; i++) {        
+
+        highScoresBoxEl.innerHTML = `
+            <ol id="scoresList">
+                <li id="scoresListItem">userInfo[i]</li>
+                <li id="scoresListItem">userInfo[i]</li>
+                <li id="scoresListItem">userInfo[i]</li>
+            </ol>
+        `;
+        highScoresBoxEl.appendChild("#scoresList");
+    }    
 }
 
 startCountdown();

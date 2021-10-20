@@ -16,7 +16,7 @@
                 </div>
                 <div class="quizIntroText">
                     <p>Try to answer the following code-related questions within 60 seconds. There are 10 questions and each question is worth 10 points.</p>
-                    <p>Keep in mind that incorrect answers will penalize your score/timer by ten seconds and correct answers will increase your score/timer by ten seconds. The game is over when all 10 questions are answered or the timer reaches 0. When game ends, your initials and score will be added to our leader board.</p>
+                    <p>Keep in mind that incorrect answers will penalize your score by ten seconds and correct answers will increase your score by ten seconds. The game is over when all 10 questions are answered or the timer reaches 0. When game ends, your initials and score will be saved and added to the leader board.</p>
                 </div>
                 <div class="quizIntroStart">
                     <button id="start" class="btn" onclick="hideQuizIntro()">Start Quiz</button>
@@ -29,7 +29,7 @@
                 <div id="quiz">                    
                     <header class="quizHeader">
                         <div id="hdrSubTitle" class="hdrSubTitle">
-                            <a href="#highScoresBox">View High Scores</a>
+                            <a href="#highScoresBox" onclick=loadUserData();>View High Scores</a>
                         </div>                               
                                                   
                         <div id="countDown" class="hdrTimerSec">
@@ -80,10 +80,10 @@
                 <div id="highScoresBoxTitle">
                     <h1>High Scores</h1>
                 </div>
-                <div id="highScores" -->
-                    <!-- get from local storage -->
-                <!-- /div>
-                <div class="restart" id="restart">
+                <div id="highScores">
+                    <!-- get from local storage -->                    
+                </div>
+                <!-- <div class="restart" id="restart">
                     <input type="button" value="Go back" />
                     <span id="reset" class="reset"><input type="button" value="Clear High Scores" /></span>
                 </div>
