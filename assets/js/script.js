@@ -86,6 +86,9 @@ function showScores() {
                 <div id="resultBoxButton" class="resultBoxButton">
                     <input id="submit" type="button" value="Submit" onclick=saveUserData(score,initials); />
                 </div>
+                <div id="resultBoxButton" class="resultBoxButton">
+                    <input id="view" type="button" value="View High Scores"; />
+                </div>
                 <div class="quizRepeat">
                     <a href="index.html">Take Quiz Again</a>
                 </div>
@@ -125,36 +128,59 @@ function startCountdown() {
 };
 
 function saveUserData() {
-  let userInfoEl = document.querySelector("#userInitials").value;
-  var userInfoScore = `${quiz.score}`;
-  let nowDate = new Date();
-  const userInfo = [localStorage.getItem("userInfo", JSON.parse(userInfo))];
-  var userInfoNew = [userInfoScore, userInfoEl, nowDate];
+    var newDataEl = document.getElementById("highScoresContent").value;
+    let userInfoEl = document.querySelector("#userInitials").value;
+    var userInfoScore = `${quiz.score}`;
+    let nowDate = new Date();
     
-  userInfo.push(userInfoNew);
-  localStorage.setItem("userInfo", JSON.stringify(userInfo));
-}
+    let newUserInfo = { "initials": userInfoEl, "score": userInfoScore, "date": nowDate };
 
-function loadUserData() {
-    
-    let highScoresBoxEl = document.getElementById("#highScores");    
-    let userInfo = localStorage.getItem("userInfo");
+    newDataEl = newUserInfo;   
 
-    if (!userInfo) {
-      return false;
+    if (localStorage.getItem("userInfo") === null) {
+        localStorage.setItem("userInfo", "[]");
     }
 
-    for (let i = 0; i < userInfo.length; i++) {        
+    var oldData = JSON.parse(localStorage.getItem("userInfo"));
+    oldData.push(newDataEl);
 
-        highScoresBoxEl.innerHTML = `
-            <ol id="scoresList">
-                <li id="scoresListItem">userInfo[i]</li>
-                <li id="scoresListItem">userInfo[i]</li>
-                <li id="scoresListItem">userInfo[i]</li>
-            </ol>
-        `;
-        highScoresBoxEl.appendChild("#scoresList");
-    }    
+    localStorage.setItem("userInfo", JSON.stringify(oldData));
 }
+
+function loadUserData() {    
+    var scoresListEl = document.getElementById("scoresList");
+    
+    if (localStorage.getItem("userInfo") != null) {
+        var currUserInfoArr = JSON.parse(localStorage.getItem("userInfo"));
+        
+        for (let i = 0; i < currUserInfoArr.length; i++) {            
+            currUserInfoArr[i].initials;
+            currUserInfoArr[i].score;
+            currUserInfoArr[i].date;
+            var row = document.createElement("tr");
+            row.setAttribute("id", "tblDataRow");
+            row.innerHTML = `
+                <tr id="tblDataRow">                    
+                    <td id="initials">${currUserInfoArr[i].initials}</td>
+                    <td id="score">${currUserInfoArr[i].score}</td>
+                    <td id="datePlayed">${currUserInfoArr[i].date}</td>
+                </tr>
+            `;            
+                        
+            scoresListEl.appendChild(row);
+        };        
+    }
+};
+
+//document.getElementById("view").addEventListener("click", viewHighScores);
+
+function viewHighScores() {
+    let quizBoxEl = document.getElementById("quizBox");
+    quizBoxEl.style.display = "none";
+
+    let highScoresBoxEl = document.getElementById("highScoresBox");
+    highScoresBoxEl.style.display = "block";
+    loadUserData();
+};
 
 startCountdown();

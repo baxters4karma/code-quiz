@@ -29,7 +29,7 @@
                 <div id="quiz">                    
                     <header class="quizHeader">
                         <div id="hdrSubTitle" class="hdrSubTitle">
-                            <a href="#highScoresBox" onclick=loadUserData();>View High Scores</a>
+                            <a href="#" onclick="javascript:viewHighScores()">View High Scores</a>
                         </div>                               
                                                   
                         <div id="countDown" class="hdrTimerSec">
@@ -80,8 +80,19 @@
                 <div id="highScoresBoxTitle">
                     <h1>High Scores</h1>
                 </div>
-                <div id="highScores">
-                    <!-- get from local storage -->                    
+                <div id="highScoresContent">                    
+                    <table id="scoresTable" class="table">
+                        <thead id="tblHdr">
+                            <tr id="tblHdr">
+                                <th>User</th>
+                                <th>Score</th>
+                                <th>Date Played</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scoresList">
+                            <tr id="tblDataRow"></tr>
+                        </tbody>
+                    </table>     
                 </div>
                 <!-- <div class="restart" id="restart">
                     <input type="button" value="Go back" />
