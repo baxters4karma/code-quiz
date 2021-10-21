@@ -1,9 +1,11 @@
 //CREATE QUIZ CLASS
 class Quiz {
-    constructor(questions) {
+    constructor(questions, result) {
         this.score = 0;
         this.questions = questions;
-        this.questionIndex = 0;
+        result = getRandomNumber(0, questions.length - 1);
+        this.questionIndex = result;
+        this.questionCount = 1;        
     }
 
     getQuestionIndex() {
@@ -16,35 +18,33 @@ class Quiz {
         } else {
             this.score -= 10;
         }
-        this.questionIndex++;        
+        this.questionIndex = getRandomNumber(0, questions.length - 1);
+        this.questionCount++;
     }
 
     isEnded() {
-        return this.questionIndex === this.questions.length;
+        return this.quizTime === 0;
     }
 }
 
 // DISPLAY QUESTION
 function displayQuestion() {    
-    
     if (quiz.isEnded()) {
         showScores();
     } else {
-        
-        
-        // show question
-        let questionEl = document.getElementById("question");
-        questionEl.innerHTML = quiz.getQuestionIndex().text;
+      // show question
+      let questionEl = document.getElementById("question"); 
+      questionEl.innerHTML = quiz.getQuestionIndex().text;
 
-        // show options
-        let choices = quiz.getQuestionIndex().choices;
-        for (let i = 0; i < choices.length; i++) {
-            let choiceEl = document.getElementById("choice" + i);
-            choiceEl.innerHTML = choices[i];
-            guess("btn" + i, choices[i]);            
-        }
+      // show options
+      let choices = quiz.getQuestionIndex().choices;
+      for (let i = 0; i < choices.length; i++) {
+        let choiceEl = document.getElementById("choice" + i);
+        choiceEl.innerHTML = choices[i];
+        guess("btn" + i, choices[i]);
+      }
 
-        showProgress();
+      showProgress();
     }
 };
 
@@ -74,14 +74,15 @@ function hideHighScores() {
 function guess(id, guess) {
     let button = document.getElementById(id);
     button.onclick = function () {
-        quiz.guess(guess);
+        quiz.guess(guess);        
         displayQuestion();
     }
 };
 
 // create show progress
 function showProgress() {
-    let currentQuestionNumber = quiz.questionIndex + 1;
+    
+    let currentQuestionNumber = quiz.questionCount;
     let progressEl = document.getElementById("progress");
     progressEl.innerHTML =
         `Question ${currentQuestionNumber} of ${quiz.questions.length}`;
@@ -101,7 +102,7 @@ function showScores() {
             </div>
             <div id="resultBox" class="resultBox">
                 <div id="resultBoxButton" class="resultBoxButton">
-                    <input id="submit" type="button" value="Submit" onclick=saveUserData(score,initials); />
+                    <input id="submit" type="button" value="Submit" onclick=saveUserData(); />
                 </div>
                 <div id="resultBoxButton" class="resultBoxButton">
                     <input id="view" type="button" value="View High Scores" onclick=loadUserData(); />
@@ -162,6 +163,8 @@ function saveUserData() {
     oldData.push(newDataEl);
 
     localStorage.setItem("userInfo", JSON.stringify(oldData));
+
+    window.alert("Score has been saved!");
 }
 
 function loadUserData() {    
