@@ -234,6 +234,25 @@ header {
   background-color:blue;
 }
 
+
+#view{
+	font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  background-color: orangered;
+  padding: 1rem;
+  border-radius: 5px;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  margin: .5rem;
+  width: 10rem;
+}
+
+#view:hover{
+	background-color: blue;
+}
+
 #initials {
   font-size: 1.85rem;
   padding: 15px;

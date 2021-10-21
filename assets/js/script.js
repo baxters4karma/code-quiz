@@ -30,6 +30,8 @@ function displayQuestion() {
     if (quiz.isEnded()) {
         showScores();
     } else {
+        
+        
         // show question
         let questionEl = document.getElementById("question");
         questionEl.innerHTML = quiz.getQuestionIndex().text;
@@ -46,9 +48,24 @@ function displayQuestion() {
     }
 };
 
+function getRandomNumber(min, max) {
+    let step1 = max - min + 1;
+    let step2 = Math.random() * step1;
+    let result = Math.floor(step2) + min;
+
+    return result;
+}
+
 function hideQuizIntro() {
     let qIntroEl = document.getElementById("quizIntro");
     qIntroEl.style.display = "none";
+    let qBox = document.getElementById("quizBox");
+    qBox.style.display = "flex";
+};
+
+function hideHighScores() {
+    let highScoresBoxEl = document.getElementById("highScoresBox");
+    highScoresBoxEl.style.display = "none";
     let qBox = document.getElementById("quizBox");
     qBox.style.display = "flex";
 };
@@ -87,7 +104,7 @@ function showScores() {
                     <input id="submit" type="button" value="Submit" onclick=saveUserData(score,initials); />
                 </div>
                 <div id="resultBoxButton" class="resultBoxButton">
-                    <input id="view" type="button" value="View High Scores"; />
+                    <input id="view" type="button" value="View High Scores" onclick=loadUserData(); />
                 </div>
                 <div class="quizRepeat">
                     <a href="index.html">Take Quiz Again</a>

@@ -12,7 +12,7 @@ class Question {
   }
 }
 
-// creating an array and passing the number, questions, options, and answers
+// creating an array and passing the questions, options, and answers
 const questions = [
   new Question(
     "What does HTML stand for?",
