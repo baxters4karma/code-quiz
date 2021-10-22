@@ -105,7 +105,7 @@ function showScores() {
                     <input id="submit" type="button" value="Submit" onclick=saveUserData(); />
                 </div>
                 <div id="resultBoxButton" class="resultBoxButton">
-                    <input id="view" type="button" value="View High Scores" onclick=loadUserData(); />
+                    <input id="view" type="button" value="View High Scores" onclick="loadUserData();" />
                 </div>
                 <div class="quizRepeat">
                     <a href="index.html">Take Quiz Again</a>
@@ -113,7 +113,8 @@ function showScores() {
             </div>
         `;
     let quizEl = document.getElementById("quiz");
-    quizEl.innerHTML = quizEndHTML;        
+    quizEl.innerHTML = quizEndHTML;
+    document.getElementById("view").addEventListener("click", viewHighScores);
 };
 
 //acquire questions
@@ -191,8 +192,6 @@ function loadUserData() {
         };        
     }
 };
-
-//document.getElementById("view").addEventListener("click", viewHighScores);
 
 function viewHighScores() {
     let quizBoxEl = document.getElementById("quizBox");
