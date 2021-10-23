@@ -10,65 +10,65 @@
     
     <div class="container">
         <body>
-            <section id="quizIntro" class="quizIntro">
-                <div class="quizIntroTitle">
+            <section id="quizIntro" class="item">
+                <div id="quizIntroTitle" class="item-inner">
+                    <hr>
                     <h1>Coding Quiz Challenge</h1>
+                    <hr>
                 </div>
-                <div class="quizIntroText">
+                <div id="quizIntroText" class="item-inner">
                     <p>Try to answer the following code-related questions within 60 seconds. There are 70 questions and each question is worth 10 points.</p>
                     <p>Keep in mind that incorrect answers will penalize your score by ten seconds and correct answers will increase your score by ten seconds. The game is over when all 70 questions are answered or the timer reaches 0. When game ends, your initials and score will be saved and added to the leader board.</p>
                 </div>
-                <div class="quizIntroStart">
-                    <button id="start" class="btn" onclick="hideQuizIntro()">Start Quiz</button>
+                <div id="quizIntroStart" class="item-inner-btn">
+                    <button id="start" class="item-inner-btn" onclick="hideQuizIntro()">Start Quiz</button>
                 </div>
             </section>
 
             <script src="./assets/js/questions.js"></script>
 
-            <section id="quizBox" class="quizBox" style="display: none;">
-                <div id="quiz">                    
-                    <header class="quizHeader">
-                        <div id="hdrSubTitle" class="hdrSubTitle">
+            <section id="quizBox" class="item" style="display: none;">
+                <div id="quiz" class="item-container">
+                    <header id="quizHeader" class="item-container-outer">
+                        <div id="hdrSubTitle" class="item-inner">
                             <a href="#" onclick="javascript:viewHighScores()">View High Scores</a>
                         </div>                               
                                                   
-                        <div id="countDown" class="hdrTimerSec">
+                        <div id="countDown" class="item-inner">
                             <!-- will populate by JavaScript -->
                         </div>                                               
                     </header>
 
-                    <div id="quizContent" class="quizContent">
-                        <h1 id="quizTitle">Coding Quiz Challenge</h1>                     
-                        <div id="progressScore">
-                            <div id="progress">
+                    <div id="quizContent" class="item-container-outer">
+                        <h1 id="quizTitle" class="item-container-inner">Coding Quiz Challenge</h1>                     
+                        <div id="progressScore" class="item-container-inner">
+                            <div id="progress" class="item-inner">
                                 Question x of y <!--  will populate by JavaScript -->
                             </div>
-                            <div id="currentScore">
+                            <div id="currentScore" class="item-inner">
                                 <!-- will populate by JavaScript -->
                             </div>
                         </div>
                         
                         
-                        <p id="question">What is your name?</p>
+                        <p id="question" class="item-container-inner">What is your name?</p>
                             <!-- filled by JavaScript -->
 
-                        <div id="buttons" class="buttons">
-                            <button class="btn" id="btn0">
-                                A.  <span id="choice0"></span>
+                        <div id="buttons" class="item-container-inner">
+                            <button class="item-inner-btn" id="btn0">
+                                A. <span id="choice0"></span>
                             </button>
-                            <button class="btn" id="btn1">
-                                B.  <span id="choice1"></span>
+                            <button class="item-inner-btn" id="btn1">
+                                B. <span id="choice1"></span>
                             </button>
-                            <button class="btn" id="btn2">
-                                C.  <span id="choice2"></span>
+                            <button class="item-inner-btn" id="btn2">
+                                C. <span id="choice2"></span>
                             </button>
-                            <button class="btn" id="btn3">
-                                D.  <span id="choice3"></span>
+                            <button class="item-inner-btn" id="btn3">
+                                D. <span id="choice3"></span>
                             </button>
                         </div>
-                    </div>
-
-                    <hr>
+                    </div>                    
 
                     <footer>
                         KU Bootcamp, Week 4: Quiz App
@@ -76,28 +76,31 @@
                 </div>
             </section>
 
-            <section id="highScoresBox" class="highScoresBox" style="display: none;">
-                <div id="highScoresBoxTitle">
-                    <h1>High Scores</h1>
-                </div>
-                <div id="highScoresContent">                    
-                    <table id="scoresTable" class="table">
-                        <thead id="tblHdr">
-                            <tr id="tblHdr">
-                                <th>User</th>
-                                <th>Score</th>
-                                <th>Date Played</th>
-                            </tr>
-                        </thead>
-                        <tbody id="scoresList">
-                            <tr id="tblDataRow"></tr>
-                        </tbody>
-                    </table>     
-                </div>
-
-                <div class="restart" id="restart">                    
-                    <button id="restart" class="btn" onclick="hideHighScores()">Go Back</button>
-                </div>
+            <section id="highScoresBox" class="item" style="display: none;">
+                <div class="item-container">
+                    <div id="highScoresBoxTitle" class="item-container-inner">
+                        <h1>High Scores</h1>
+                    </div>
+                    <div id="highScoresContent" class="item-container-inner">                    
+                        <table id="scoresTable" class="item-inner table">
+                            <thead id="tblHdr">
+                                <tr id="tblHdr">
+                                    <th>User</th>
+                                    <th>Score</th>
+                                    <th>Date Played</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scoresList">
+                                <tr id="tblDataRow"></tr>
+                            </tbody>
+                        </table>     
+                    </div>
+                    <div class="item-container-inner">
+                        <div class="item-inner-btn" id="restart">       
+                            <button id="restart" class="restart" onclick="hideHighScores()" value="Go Back" />
+                        </div>
+                    </div>
+                </div>                
             </section>
             
             <script src="./assets/js/script.js"></script>

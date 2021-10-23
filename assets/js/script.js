@@ -105,7 +105,7 @@ function showScores() {
                     <input id="submit" type="button" value="Submit" onclick=saveUserData(); />
                 </div>
                 <div id="resultBoxButton" class="resultBoxButton">
-                    <input id="view" type="button" value="View High Scores" onclick="loadUserData();" />
+                    <input id="view" type="button" value="View High Scores" />
                 </div>
                 <div class="quizRepeat">
                     <a href="index.html">Take Quiz Again</a>
@@ -125,7 +125,7 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 //add a count down
-let time = 1;
+let time = 15;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
 
@@ -146,26 +146,32 @@ function startCountdown() {
     }, 1000);
 };
 
-function saveUserData() {
+function saveUserData() {    
     var newDataEl = document.getElementById("highScoresContent").value;
     let userInfoEl = document.querySelector("#userInitials").value;
     var userInfoScore = `${quiz.score}`;
     let nowDate = new Date();
+
+    if (!userInfoEl) {
+        alert("Please enter initials and then Submit.");
+        return;
+    } else {
     
-    let newUserInfo = { "initials": userInfoEl, "score": userInfoScore, "date": nowDate };
+        let newUserInfo = { "initials": userInfoEl, "score": userInfoScore, "date": nowDate };
 
-    newDataEl = newUserInfo;   
+        newDataEl = newUserInfo;
 
-    if (localStorage.getItem("userInfo") === null) {
-        localStorage.setItem("userInfo", "[]");
+        if (localStorage.getItem("userInfo") === null) {
+            localStorage.setItem("userInfo", "[]");
+        }
+
+        var oldData = JSON.parse(localStorage.getItem("userInfo"));
+        oldData.push(newDataEl);
+
+        localStorage.setItem("userInfo", JSON.stringify(oldData));
+
+        window.alert("Score has been saved!");
     }
-
-    var oldData = JSON.parse(localStorage.getItem("userInfo"));
-    oldData.push(newDataEl);
-
-    localStorage.setItem("userInfo", JSON.stringify(oldData));
-
-    window.alert("Score has been saved!");
 }
 
 function loadUserData() {    

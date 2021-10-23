@@ -1,168 +1,236 @@
+:root {
+  --bg-primary-color:#eee;
+
+  --txt-primary-color: #333;
+  --txt-secondary-color: white;
+  --txt-tertiary-color: darkgray;
+
+  --btn-primary-color: aqua;
+  --btn-secondary-color: darkslateblue;
+  --btn-tertiary-color: orangered;
+  --btn-hover-color: blue;
+  --btn-active-color: purple;
+
+  --border-color: #777;
+}
+
 * {
   box-sizing: border-box;
 }
 
 html,
-body {
-  height: 100%;
+body {  
   margin: 0;
   padding: 0;
-  font-size: 20px;
-	font-family: sans-serif;
-	color: #333;
+  font-size: 18px;
+	font-family: Arial, sans-serif;
+	color: var(--txt-primary-color);
+}
+
+header {
+  padding: 25px 0;
+  margin: 5px 0;
+  background-color: var(--bg-primary-color);
+  color: var(--txt-primary-color);
+}
+
+footer {
+  display: flex;
+  flex-flow: wrap;  
+  font-size: 14px;
+  padding: 5px 0 0 0;
+  margin-top: 25px;  
+  background-color: var(--bg-primary-color);
+  color: var(--txt-tertiary-color);
+  text-align: left;
+  border-top: 1px solid;
+}
+
+section {
+  padding: 10px;  
 }
 
 .container {  
-  
-  max-width: 25rem;
-  height: 100%;
-  margin: 0 auto;  
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--bg-primary-color);
+  max-height: 100%;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: .8fr;  
+  padding: 0;
+  margin: 5px auto;
+  background-color: var(--bg-primary-color);  
+  justify-content: center;
+  text-align: center;  
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: .85fr;  
+  justify-content: center;
+  background-color: var(--bg-primary-color);
+  margin: 5px auto;  
+}
+
+.item-container-outer {  
   display: flex;
   flex-flow: wrap;
-  justify-content: center;
-  text-align: center;
-  
+  justify-content: space-between;  
+  margin: 0;
+  padding: 0;  
 }
 
-/* .quizIntro {
+.item-container-outer .item-inner {
+  border: none;  
+}
+
+.item-container-outer #hdrSubTitle {
+  align-content: center;
+}
+
+.item-container-outer #countDown {
+  border: none;
   display: flex;
   flex-flow: wrap;
-  justify-content: center;
-  max-width: 25rem;
-  height: 75px;  
-} */
-
-.quizIntroTitle {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.quizIntroText {
-  font-size: 1.25rem;
-}
-
-.quizIntroStart {
-  width: fit-content;
-  margin: 2px auto;
-}
-
-.quizBox {  
-  
-  margin: 0 auto;
-  background-color: #eee;
-  padding: 1rem 2rem 2rem 2rem;
-  border: 3px solid #333;
-  border-radius: 5px;  
-}
-
-#quiz {
-  max-width: 300rem;
-}
-
-.quizHeader {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.quizHeader #hdrSubTitle {
-  text-align: left;  
-  font-size: medium;
-  width: 10rem;
-  justify-content: left;  
-}
-
-.quizHeader #countDown {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  width: 4rem;
+  justify-content: space-between;
+  width: 5rem;
   font-size: 1rem;
   font-weight: 500;
   background-color: darkslateblue;
-  padding: 5px 5px 5px 5px;  
+  padding: 3px;  
   margin: 1px;
   color: white;
-  border-radius: 3px;  
+  border-radius: 3px; 
 }
 
-.quizContent {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.quizContent #quizTitle {  
+.item-container-outer #quizTitle {
   width: 100%;
   font-size: 1.5rem;
   text-align: center;
   background-color: aqua;
-  
+  margin: 1rem;
 }
 
-.quizContent #progressScore {
+.item-container-outer #progressScore {
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
+  margin: 2px auto;
+  width: 100%;
 }
 
-#progress {
-  width: 8rem;
-  color: darkgray;
-  font-size: 1rem;
-  font-weight: 70;
-  
-}
-
-#currentScore {
-  width: 5em;
-  color: darkgray;
-  font-size: 1rem;
-  font-weight: 70;
+.item-container-outer #question {
   display: flex;
   flex-flow: wrap;
-  justify-content:space-between;
-  
-}
-
-.quizBox #question {
   font-size: 1rem;
   font-weight: 600;
   color: darkslateblue;
   border: 1px solid #777;
   border-width: 1px 0;
-  padding: 5px 0;  
+  padding: 5px 0;
+  margin: 5px auto; 
 }
 
-.buttons {
+.item-container-outer #buttons {
+  display: grid;
+  grid-template-columns: auto;
+  margin: .5rem;
+  width: 100%;  
+}
+
+.item-container-inner {    
+  background-color: var(--bg-primary-color);
   margin: 1.5rem 0 4rem 0;
 }
 
-.btn {
+.item-container-inner #progress {
   text-align: left;
-  background-color:aqua;
-  width: 100%;
+  color: darkgray;
   font-size: 1rem;
-  color: black;
-  border: 1px solid darkgray;
+  font-weight: 70;
+}
+
+.item-container-inner #currentScore {  
+  text-align: right;
+  color: darkgray;
+  font-size: 1rem;
+  font-weight: 70;  
+}
+
+.item-inner {
+  display: grid;
+  border-top: 3px solid var(--border-color);
+}
+
+.item-inner h1 {
+  margin: 0px;  
+}
+
+.item-inner-btn #start{
+  background-color: var(--btn-primary-color);  
+  text-align: left;
+  background-color:aqua;  
+  font-size: 1rem;
+  color:var(--txt-primary-color);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  margin: 7px 0;
-  padding: 1rem;
+  margin: 7px 0; 
+  outline: none;
+  justify-self: center;
+}
+
+.item-container-inner .item-inner-btn {
+  background-color: var(--btn-primary-color);  
+  text-align: left;
+  background-color:aqua;  
+  font-size: 1rem;
+  color:var(--txt-primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin: 7px 0; 
   outline: none;  
 }
 
-.btn:hover {
+.item-inner-btn:hover {
   cursor: pointer;
   background-color: blue;
   color: white;
 }
 
-.btn:active {
-  background-color: purple;  
+.item-inner-btn button {
+  border: none;  
 }
 
-#score {
+.item #highScoresBox {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.item-container #highScoresBoxTitle {
+  margin: 0 auto;  
+}
+
+.item-container-inner .item-inner-table {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    width: 80%;
+    margin: 0 auto;    
+  }
+
+/* ------------------------------------------- */
+
+/* #score {
   color: black;
   text-align: center;
   font-size: 1rem;
@@ -267,6 +335,15 @@ body {
   text-align: center;
 }
 
+.highScoresBox {
+  display: grid;
+  padding: 10px;
+  
+}
+
 #highScoresBox {
   display: none;
 }
+
+
+} */
