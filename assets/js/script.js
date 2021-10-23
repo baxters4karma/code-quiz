@@ -48,14 +48,7 @@ function displayQuestion() {
     }
 };
 
-// function getRandomNumber(min, max) {
-//     let step1 = max - min + 1;
-//     let step2 = Math.random() * step1;
-//     let result = Math.floor(step2) + min;
-
-//     return result;
-// }
-
+//generating and returning an array of numbers ranging from 0-69 representing questions array indices
 function generateNumbers(min, max) {
   var numArr = [];
 
@@ -66,6 +59,7 @@ function generateNumbers(min, max) {
   return numArr;
 }
 
+//passing in the generateNumbers function array then returning a shuffled array of numbers 0-69
 function shuffle(array) {
   var i = array.length,
     j = 0,
@@ -83,6 +77,7 @@ function shuffle(array) {
   return array;
 }
 
+//passing in 0 and questions.length indices
 function getRandomNumber(min, max) {
   var minNum = min;
   var maxNum = max;
@@ -91,6 +86,7 @@ function getRandomNumber(min, max) {
 
   var shuffleNumArr = shuffle(numArr);
 
+  //adding another level of randomness to returning question index
   var result = Math.floor(Math.random(shuffleNumArr) * 70);
     
   console.log(result);
@@ -98,6 +94,9 @@ function getRandomNumber(min, max) {
   return result;
 }
 
+
+
+//hiding the quiz intro screen once Start button is clicked, then making quiz box visible
 function hideQuizIntro() {
     let qIntroEl = document.getElementById("quizIntro");
     qIntroEl.style.display = "none";
@@ -105,6 +104,7 @@ function hideQuizIntro() {
     qBox.style.display = "flex";
 };
 
+//hiding
 function hideHighScores() {
     let highScoresBoxEl = document.getElementById("highScoresBox");
     highScoresBoxEl.style.display = "none";

@@ -96,7 +96,7 @@ Please note this website was designed with a mobile-first mindset and uses the f
 ## Mock-Up
 The following animation demonstrates the application functionality:
 
-![Demonstration of the Coding Quiz Challenge.](./assets/images/04-web-apis-homework-demo.gif)
+![Demonstration of the Coding Quiz Challenge.](./assets/images/04-codingQuizChallenge-baxter.gif)
 
 [back to top](#table-of-contents)
 ## Credits
