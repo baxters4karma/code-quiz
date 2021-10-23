@@ -25,6 +25,7 @@ body {
   font-size: 18px;
 	font-family: Arial, sans-serif;
 	color: var(--txt-primary-color);
+  background-color: var(--bg-primary-color);
 }
 
 header {
@@ -99,10 +100,10 @@ section {
   width: 5rem;
   font-size: 1rem;
   font-weight: 500;
-  background-color: darkslateblue;
+  background-color: var(--btn-secondary-color);
   padding: 3px;  
   margin: 1px;
-  color: white;
+  color: var(--txt-secondary-color);
   border-radius: 3px; 
 }
 
@@ -110,7 +111,7 @@ section {
   width: 100%;
   font-size: 1.5rem;
   text-align: center;
-  background-color: aqua;
+  background-color: var(--btn-primary-color);
   margin: 1rem;
 }
 
@@ -127,8 +128,8 @@ section {
   flex-flow: wrap;
   font-size: 1rem;
   font-weight: 600;
-  color: darkslateblue;
-  border: 1px solid #777;
+  color: var(--btn-secondary-color);
+  border: 1px solid var(--border-color);
   border-width: 1px 0;
   padding: 5px 0;
   margin: 5px auto; 
@@ -148,14 +149,14 @@ section {
 
 .item-container-inner #progress {
   text-align: left;
-  color: darkgray;
+  color: var(--txt-tertiary-color);
   font-size: 1rem;
   font-weight: 70;
 }
 
 .item-container-inner #currentScore {  
   text-align: right;
-  color: darkgray;
+  color: var(--txt-tertiary-color);
   font-size: 1rem;
   font-weight: 70;  
 }
@@ -172,7 +173,7 @@ section {
 .item-inner-btn #start{
   background-color: var(--btn-primary-color);  
   text-align: left;
-  background-color:aqua;  
+  background-color:var(--btn-primary-color);  
   font-size: 1rem;
   color:var(--txt-primary-color);
   border: 1px solid var(--border-color);
@@ -185,7 +186,7 @@ section {
 .item-container-inner .item-inner-btn {
   background-color: var(--btn-primary-color);  
   text-align: left;
-  background-color:aqua;  
+  background-color: var(--btn-primary-color);  
   font-size: 1rem;
   color:var(--txt-primary-color);
   border: 1px solid var(--border-color);
@@ -196,41 +197,55 @@ section {
 
 .item-inner-btn:hover {
   cursor: pointer;
-  background-color: blue;
-  color: white;
+  background-color: var(--btn-hover-color);
+  color: var(--txt-secondary-color);
+}
+
+.item-container-inner .item-inner-btn #restart {
+  background-color: var(--btn-primary-color);  
+  text-align: left;
+  background-color:var(--btn-primary-color);  
+  font-size: 1rem;
+  color:var(--txt-primary-color);  
+  border-radius: 5px;
+  margin: 7px 0; 
+  outline: none;  
 }
 
 .item-inner-btn button {
   border: none;  
 }
 
-.item #highScoresBox {
+#highScoresBox {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   padding: 10px;
 }
 
-.item-container #highScoresBoxTitle {
+#highScoresBox .item-container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+#highScoresContent #scoresTable {
+  margin: 5px auto;  
+}
+
+#highScoresBox .item-container-inner {
+  margin: 5px auto;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.item-container #highScoresBoxTitle h1 {
   margin: 0 auto;  
 }
 
-.item-container-inner .item-inner-table {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-@media screen and (min-width: 600px) {
-  body {
-    width: 80%;
-    margin: 0 auto;    
-  }
-
-/* ------------------------------------------- */
-
-/* #score {
+ .item-container #score {
   color: black;
   text-align: center;
   font-size: 1rem;
@@ -265,6 +280,7 @@ section {
   margin: .5rem;
   width: 10rem;
   margin-bottom: 0px;
+  cursor: pointer;
 }
 
 #submit:hover{
@@ -309,7 +325,6 @@ section {
   background-color:blue;
 }
 
-
 #view{
 	font-size: 1rem;
   font-weight: 600;
@@ -322,6 +337,7 @@ section {
   justify-content: space-evenly;
   margin: .5rem;
   width: 10rem;
+  cursor: pointer;
 }
 
 #view:hover{
@@ -335,15 +351,13 @@ section {
   text-align: center;
 }
 
-.highScoresBox {
-  display: grid;
-  padding: 10px;
-  
-}
-
 #highScoresBox {
   display: none;
 }
 
-
-} */
+@media screen and (min-width: 600px) {
+  body {
+    width: 80%;
+    margin: 0 auto;    
+  }
+}

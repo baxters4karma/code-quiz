@@ -48,12 +48,54 @@ function displayQuestion() {
     }
 };
 
-function getRandomNumber(min, max) {
-    let step1 = max - min + 1;
-    let step2 = Math.random() * step1;
-    let result = Math.floor(step2) + min;
+// function getRandomNumber(min, max) {
+//     let step1 = max - min + 1;
+//     let step2 = Math.random() * step1;
+//     let result = Math.floor(step2) + min;
 
-    return result;
+//     return result;
+// }
+
+function generateNumbers(min, max) {
+  var numArr = [];
+
+  for (var i = 0; i < max; i++) {
+    numArr.push(i);
+  }
+
+  return numArr;
+}
+
+function shuffle(array) {
+  var i = array.length,
+    j = 0,
+    temp;
+
+  while (i--) {
+    j = Math.floor(Math.random() * (i + 1));
+
+    // swap randomly chosen element with current element
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
+function getRandomNumber(min, max) {
+  var minNum = min;
+  var maxNum = max;
+
+  var numArr = generateNumbers(minNum, maxNum);
+
+  var shuffleNumArr = shuffle(numArr);
+
+  var result = Math.floor(Math.random(shuffleNumArr) * 70);
+    
+  console.log(result);
+
+  return result;
 }
 
 function hideQuizIntro() {
@@ -125,7 +167,7 @@ let quiz = new Quiz(questions);
 displayQuestion();
 
 //add a count down
-let time = 15;
+let time = 1;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
 
@@ -175,10 +217,10 @@ function saveUserData() {
 }
 
 function loadUserData() {    
-    var scoresListEl = document.getElementById("scoresList");
+    var scoresListEl = document.getElementById("scoresList");   
     
     if (localStorage.getItem("userInfo") != null) {
-        var currUserInfoArr = JSON.parse(localStorage.getItem("userInfo"));
+        var currUserInfoArr = JSON.parse(localStorage.getItem("userInfo"));        
         
         for (let i = 0; i < currUserInfoArr.length; i++) {            
             currUserInfoArr[i].initials;

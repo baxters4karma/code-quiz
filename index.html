@@ -81,23 +81,20 @@
                     <div id="highScoresBoxTitle" class="item-container-inner">
                         <h1>High Scores</h1>
                     </div>
-                    <div id="highScoresContent" class="item-container-inner">                    
+                    <div id="highScoresContent" class="item-container-inner">
                         <table id="scoresTable" class="item-inner table">
-                            <thead id="tblHdr">
-                                <tr id="tblHdr">
-                                    <th>User</th>
-                                    <th>Score</th>
-                                    <th>Date Played</th>
-                                </tr>
-                            </thead>
                             <tbody id="scoresList">
-                                <tr id="tblDataRow"></tr>
+                                <tr id="tblHdr">
+                                    <th id="initials">User</th>
+                                    <th id="score">Score</th>
+                                    <th id="datePlayed">Date Played</th>
+                                </tr>
                             </tbody>
-                        </table>     
+                        </table>
                     </div>
                     <div class="item-container-inner">
                         <div class="item-inner-btn" id="restart">       
-                            <button id="restart" class="restart" onclick="hideHighScores()" value="Go Back" />
+                            <button id="restart" class="restart" onclick="hideHighScores()">Go Back</button>
                         </div>
                     </div>
                 </div>                
