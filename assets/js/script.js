@@ -94,8 +94,7 @@ function getRandomNumber(min, max) {
   return result;
 }
 
-
-
+/* REFACTOR candidate (generalizing screens hidden, reducing hiding quizBox code pieces) */
 //hiding the quiz intro screen once Start button is clicked, then making quiz box visible
 function hideQuizIntro() {
     let qIntroEl = document.getElementById("quizIntro");
@@ -104,7 +103,8 @@ function hideQuizIntro() {
     qBox.style.display = "flex";
 };
 
-//hiding
+/* REFACTOR candidate (generalizing screens hidden, reducing hiding quizBox code pieces) */
+//hiding the high scores screen once Go Back button is clicked, then making quiz box visible
 function hideHighScores() {
     let highScoresBoxEl = document.getElementById("highScoresBox");
     highScoresBoxEl.style.display = "none";
@@ -132,6 +132,7 @@ function showProgress() {
     currScoreEl.innerHTML = `Score: ${quiz.score}`;
 };
 
+/* REFACTOR candidate (moving HTML creation to own function) */
 // show score
 function showScores() {    
     let totalScore = quiz.questions.length * 10;
@@ -166,7 +167,7 @@ let quiz = new Quiz(questions);
 //display question
 displayQuestion();
 
-//add a count down
+//add a 60 second (1 min) count down
 let time = 1;
 let quizTimeInMinutes = time * 60 * 60;
 let quizTime = quizTimeInMinutes / 60;
@@ -188,6 +189,7 @@ function startCountdown() {
     }, 1000);
 };
 
+//save user score, initials, and date played to local storage
 function saveUserData() {    
     var newDataEl = document.getElementById("highScoresContent").value;
     let userInfoEl = document.querySelector("#userInitials").value;
@@ -216,6 +218,8 @@ function saveUserData() {
     }
 }
 
+//checking that local storage data exists, if not, create empty array
+//load existing user data from local storage
 function loadUserData() {    
     var scoresListEl = document.getElementById("scoresList");   
     
@@ -241,6 +245,8 @@ function loadUserData() {
     }
 };
 
+/* REFACTOR candidate (generalizing screens hidden/displayed) */
+//hiding quizBox once View High scores button/link is clicked, then making highScoresBox visible
 function viewHighScores() {
     let quizBoxEl = document.getElementById("quizBox");
     quizBoxEl.style.display = "none";
@@ -250,4 +256,5 @@ function viewHighScores() {
     loadUserData();
 };
 
+//calling start countdown function to start quiz timer
 startCountdown();

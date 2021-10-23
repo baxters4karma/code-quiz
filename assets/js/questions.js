@@ -183,8 +183,8 @@ const questions = [
   new Question(
     "What should appear at the very end of your JavaScript?",
     [
-      "The /&lt;/script/&gt;",
-      "The /&lt;script/&gt;",
+      "The &lt;/script&gt;",
+      "The &lt;script/&gt;",
       "The END statement",
       "None of the above"
     ],
@@ -493,8 +493,8 @@ const questions = [
   ),
   new Question(
     "The syntax of a blur method in a button object is ______________",
-    ["Blur()", "Blur(contrast)", "Blur(value)", "Blur(depth)"],
-    "Blur()"
+    ["blur()", "blur(contrast)", "blur(value)", "blur(depth)"],
+    "blur()"
   ),
   new Question(
     "The syntax of capture events method for document object is ______________",
@@ -591,8 +591,7 @@ const questions = [
     ],
     "9123"
   ),
-  // you can uncomment the below codes and make duplicate as more as you want to add question
-  // but remember you need to give the numberId value serialize like 1,2,3,5,6,7,8,9.....
+  // you can uncomment the below codes and make duplicate, filling in items as needed 
 
   //   new Question(
   //   "Your Question is Here",

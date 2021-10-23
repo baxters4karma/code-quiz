@@ -82,6 +82,10 @@ You are required to submit BOTH of the following for review:
 
 * GitHub Repository: &nbsp; [GitHub Repository URL](https://github.com/baxters4karma/c4-code-quiz)
 
+* GitHub Project:  [Link to project](https://github.com/baxters4karma/code-quiz/projects)
+
+* GitHub Issues:  [Link to closed issues](https://github.com/baxters4karma/code-quiz/issues)
+
 [back to top](#table-of-contents)
 
 ## Usage
@@ -96,7 +100,7 @@ Please note this website was designed with a mobile-first mindset and uses the f
 ## Mock-Up
 The following animation demonstrates the application functionality:
 
-![Demonstration of the Coding Quiz Challenge.](./assets/images/04-codingQuizChallenge-baxter.gif)
+![Demonstration of the Coding Quiz Challenge.](./assets/images/m4-codingQuizChallenge-baxter.gif)
 
 [back to top](#table-of-contents)
 ## Credits
