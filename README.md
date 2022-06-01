@@ -98,13 +98,13 @@ THEN I can save my initials and score
 
 You are required to submit BOTH of the following for review:
 
-- Deployed Application: &nbsp; [Live URL](https://baxters4karma.github.io/code-quiz/)
+- Deployed Application: &nbsp; [Live URL](https://christinedbaxter.github.io/code-quiz/)
 
-- GitHub Repository: &nbsp; [GitHub Repository URL](https://github.com/baxters4karma/c4-code-quiz)
+- GitHub Repository: &nbsp; [GitHub Repository URL](https://github.com/christinedbaxter/c4-code-quiz)
 
-- GitHub Project: [Link to project](https://github.com/baxters4karma/code-quiz/projects)
+- GitHub Project: [Link to project](https://github.com/christinedbaxter/code-quiz/projects)
 
-- GitHub Issues: [Link to closed issues](https://github.com/baxters4karma/code-quiz/issues)
+- GitHub Issues: [Link to closed issues](https://github.com/christinedbaxter/code-quiz/issues)
 
 [back to top](#table-of-contents)
 
